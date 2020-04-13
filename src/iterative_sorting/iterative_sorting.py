@@ -21,7 +21,8 @@ def selection_sort(arr):
     for i in range(len(arr)):
 
         # Start by assuming the first element is the smallest
-        smallest_index = i
+        current_index = i
+        smallest_index = current_index
 
         # Using j, we can loop throgh the remaining elements
         for j in range(i+1, len(arr)):
@@ -31,7 +32,7 @@ def selection_sort(arr):
                 smallest_index = j
 
         # Swap the found minimum element with smallest_index found in the above loop
-        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+        arr[current_index], arr[smallest_index] = arr[smallest_index], arr[current_index]
              
     return arr
 
