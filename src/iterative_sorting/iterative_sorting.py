@@ -12,34 +12,26 @@ def insertion_sort(arr):
             i = i-1
             arr[i] = current
 
-       #print(arr)
-
     return arr
 
 # TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
+def selection_sort(arr):
 
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    # Loop through n-1 elements
+    for i in range(len(arr)):
 
-        # Start with current index = 0
-        cur_index = arr[i]
-        smallest_index = cur_index
-        # print(smallest_index)
+        # Start by assuming the first element is the smallest
+        smallest_index = i
 
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 lines of code) 
-        if cur_index < smallest_index:
-            # print(arr[smallest_index])
-            # Swap the element at current index with the smallest element found in the above loop
-            cur_index == smallest_index
+        # Using j, we can loop throgh the remaining elements
+        for j in range(i+1, len(arr)):
 
+            # Find next smallest element and update smallest_index if j is lower
+            if arr[smallest_index] > arr[j]:
+                smallest_index = j
 
-
-        # Start with current index = 0
-        # For all indices EXCEPT the last index:
-            # Loop through elements on right-hand-side of current index and find the smallest element
-            # Swap the element at current index with the smallest element found in above loop
+        # Swap the found minimum element with smallest_index found in the above loop
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
              
     return arr
 
@@ -47,13 +39,14 @@ def selection_sort( arr ):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     
-    # Loop through your array
+    # Loop through the array
     for i in range(len(arr)):
 
+        # Compare each element to its neighbor
         for j in range(len(arr)-1):
-            # Compare each element to its neighbor
             # current_value = arr[j]
             # neighbor_value = arr[j+1]
+            # print(j+1)
 
             # If elements in wrong position (relative to each other), swap them
             if arr[j] > arr[j+1]:
