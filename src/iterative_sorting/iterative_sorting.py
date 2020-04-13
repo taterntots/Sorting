@@ -45,33 +45,34 @@ def selection_sort( arr ):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
+def bubble_sort(arr):
     
     # Loop through your array
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
 
-        # Compare each element to its neighbor
-        # current_value = arr[j]
-        # neighbor_value = arr[j+1]
+        for j in range(len(arr)-1):
+            # Compare each element to its neighbor
+            # current_value = arr[j]
+            # neighbor_value = arr[j+1]
 
-        # If elements in wrong position (relative to each other), swap them
-        if arr[i] > arr[i+1]:
-            arr[i], arr[i+1] = arr[i+1], arr[i]
+            # If elements in wrong position (relative to each other), swap them
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
-        # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
-    # We go through the list as many times as there are elements
+            # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+        # We go through the list as many times as there are elements
 
     return arr
 
 
-arr = [5, 1, 7, 8, 2, 4, 11, 74, 34, 41]
+arr = [5, 1, 7, 8, 2, 95, 79, 4, 11, 74, 34, 41]
 
 print(f'Original =', arr)
-arr = [5, 1, 7, 8, 2, 4, 11, 74, 34, 41]
+arr = [5, 1, 7, 8, 2, 95, 79, 4, 11, 74, 34, 41]
 print(f'SortInsert =', insertion_sort(arr))
-arr = [5, 1, 7, 8, 2, 4, 11, 74, 34, 41]
+arr = [5, 1, 7, 8, 2, 95, 79, 4, 11, 74, 34, 41]
 print(f'SortSelect =', selection_sort(arr))
-arr = [5, 1, 7, 8, 2, 4, 11, 74, 34, 41]
+arr = [5, 1, 7, 8, 2, 95, 79, 4, 11, 74, 34, 41]
 print(f'SortBubble =', bubble_sort(arr))
 
 # for i in range(0, len(arr)):
