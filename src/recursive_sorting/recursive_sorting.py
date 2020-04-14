@@ -27,24 +27,45 @@ def merge(arrA, arrB):
     # print(f'arrA: ', arrA)
     # print(f'arrB: ', arrB)
 
-    i = 0
-    while len(arrA) > 0 and len(arrB) > 0:
-        if arrA[0] < arrB[0]:
-            merged_arr[i] = arrA[0]
-            del (arrA[0])
-            i = i + 1
-        else:
-            merged_arr[i] = arrB[0]
-            del (arrB[0])
-            i = i + 1
-    if len(arrA) > 0:
-        for x in arrA:
-            merged_arr[i] = x
-            i = i + 1
-    elif len(arrB) > 0:
-        for x in arrB:
-            merged_arr[i] = x
-            i += 1
+    a = 0
+    b = 0
+
+    for i in range(elements):
+        # Checks if the array is empty
+        if a >= len(arrA):
+            merged_arr[i] = arrB[b]
+            b += 1
+        elif b >= len(arrB):
+            merged_arr[i] = arrA[a]
+            a += 1
+        # Compares items in the array to find smallest
+        elif arrA[a] <= arrB[b]:
+            merged_arr[i] = arrA[a]
+            a += 1
+        elif arrA[a] >= arrB[b]:
+            merged_arr[i] = arrB[b]
+            b += 1
+
+    # i = 0 # sliding index to help injection of values in merged_arr
+
+    # while len(arrA) > 0 and len(arrB) > 0:
+    #     print(arrA)
+    #     if arrA[0] < arrB[0]:
+    #         merged_arr[i] = arrA[0]
+    #         del (arrA[0])
+    #         i = i + 1 # adds one to the index so values do not get replaced
+    #     elif arrA[0] > arrB[0]:
+    #         merged_arr[i] = arrB[0]
+    #         del (arrB[0])
+    #         i = i + 1 # adds one to the index so values do not get replaced
+    # if len(arrA) > 0:
+    #     for x in arrA:
+    #         merged_arr[i] = x
+    #         i = i + 1 # adds one to the index so values do not get replaced
+    # elif len(arrB) > 0:
+    #     for x in arrB:
+    #         merged_arr[i] = x
+    #         i = i + 1 # adds one to the index so values do not get replaced
 
     return merged_arr
 
@@ -64,7 +85,6 @@ def merge_sort(arr):
 
     # Merge them back together in order with sorted merge function
     arr = merge(first_half, second_half)
-
 
     return arr
 
