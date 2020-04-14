@@ -47,7 +47,7 @@ def bubble_sort(arr):
         for j in range(len(arr)-1):
             # current_value = arr[j]
             # neighbor_value = arr[j+1]
-            # print(j+1)
+            # print(j)
 
             # If elements in wrong position (relative to each other), swap them
             if arr[j] > arr[j+1]:
